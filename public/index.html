@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +51,9 @@
               <a class="nav-link" href="#reviews">Отзывы</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-warning fw-semibold" href="#booking-module" id="nav-auth-link">Бронирование / Войти</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#footer">Контакты</a>
             </li>
           </ul>
@@ -100,7 +103,7 @@
     </div>
 
     <section class="main-content" id="catalog">
-      <div class="central-text"><h1>Каталог</h3></div>
+      <div class="central-text"><h1>Каталог</h1></div>
       <div class="container">
         <div class="row">
           <!-- ЧАЙ -->
@@ -108,7 +111,6 @@
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <div class="product-card">
                 <div class="product-thumb">
-                  
                   <img src="static/media/img/products/tea.png" alt="">
                 </div>
                 <div class="product-detail">
@@ -127,10 +129,9 @@
           </div>
           <!-- АМЕРИКАНО -->
           <div class="col-lg-4 col-sm-6">
-            <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <div class="product-card">
               <div class="product-thumb">
-                
                 <img src="static/media/img/products/americano.png" alt="">
               </div>
               <div class="product-detail">
@@ -146,14 +147,12 @@
               </div>
             </div>
             </a>
-            
           </div>
           <!-- ЭСПРЕССО -->
           <div class="col-lg-4 col-sm-6">
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <div class="product-card">
                 <div class="product-thumb">
-                  
                   <img src="static/media/img/products/espresso.png" alt="">
                 </div>
                 <div class="product-detail">
@@ -169,14 +168,12 @@
                 </div>
               </div>
             </a>
-            
           </div>
           <!-- КОФЕ -->
           <div class="col-lg-4 col-sm-6">
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <div class="product-card">
                 <div class="product-thumb">
-                  
                   <img src="static/media/img/products/coffee.png" alt="">
                 </div>
                 <div class="product-detail">
@@ -192,14 +189,12 @@
                 </div>
               </div>
             </a>
-            
           </div>
           <!-- РАФ -->
           <div class="col-lg-4 col-sm-6">
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <div class="product-card">
                 <div class="product-thumb">
-                  
                   <img src="static/media/img/products/raf.png" alt="">
                 </div>
                 <div class="product-detail">
@@ -215,7 +210,6 @@
                 </div>
               </div>
             </a>
-            
           </div>
           <!-- ПИВО -->
           <div class="col-lg-4 col-sm-6">
@@ -287,13 +281,102 @@
         </div>
       </div>
     </section>
-    
+
+    <!-- === ВНЕДРЁННЫЙ МОДУЛЬ АВТОРИЗАЦИИ И БРОНИРОВАНИЯ (ПМ.02) === -->
+    <section class="py-5" id="booking-module">
+      <div class="container" style="max-width: 720px;">
+        <div class="card bg-dark text-white shadow-lg border-secondary">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="text-center mb-3">Личный кабинет и бронирование столика</h2>
+            <div id="pm02-alert" class="alert d-none" role="alert"></div>
+
+            <!-- Блок для неавторизованных пользователей -->
+            <div id="pm02-auth-box">
+              <p class="text-center text-secondary mb-4">
+                Бронирование столика и просмотр заявок доступны только авторизованным пользователям.
+              </p>
+
+              <div class="btn-group w-100 mb-4" role="group">
+                <button type="button" id="tab-login" class="btn btn-warning fw-semibold">Вход</button>
+                <button type="button" id="tab-register" class="btn btn-outline-light">Регистрация</button>
+              </div>
+
+              <!-- Форма входа -->
+              <form id="login-form">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="example@mail.ru" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Пароль</label>
+                  <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 fw-semibold">Войти</button>
+              </form>
+
+              <!-- Форма регистрации -->
+              <form id="register-form" class="d-none">
+                <div class="mb-3">
+                  <label class="form-label">Ваше имя</label>
+                  <input type="text" name="name" class="form-control" placeholder="Иван Иванов" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="example@mail.ru" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Пароль</label>
+                  <input type="password" name="password" class="form-control" placeholder="Минимум 4 символа" minlength="4" required>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 fw-semibold">Зарегистрироваться</button>
+              </form>
+            </div>
+
+            <!-- Блок только для авторизованных пользователей (защищён сессией) -->
+            <div id="pm02-cabinet-box" class="d-none">
+              <div class="d-flex justify-content-between align-items-center bg-secondary bg-opacity-25 rounded p-3 mb-4">
+                <span>Вы вошли как: <strong id="pm02-username"></strong></span>
+                <button type="button" id="logout-btn" class="btn btn-outline-light btn-sm">Выйти</button>
+              </div>
+
+              <h4 class="mb-3">Забронировать столик</h4>
+              <form id="booking-form">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label">Дата</label>
+                    <input type="date" name="booking_date" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Время</label>
+                    <input type="time" name="booking_time" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Гостей</label>
+                    <input type="number" name="guests" class="form-control" min="1" max="12" value="2" required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Пожелания</label>
+                  <textarea name="comment" class="form-control" rows="2" placeholder="Например: столик у окна"></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 fw-semibold">Отправить бронь</button>
+              </form>
+
+              <hr class="border-secondary my-4">
+
+              <h4 class="mb-3">Мои бронирования</h4>
+              <div id="bookings-list" class="d-flex flex-column gap-2">Загрузка...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === КОНЕЦ ВНЕДРЁННОГО МОДУЛЯ === -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 
-
-    <section class="section-map">
+    <section class="section-map" id="section-map">
       <div class="container">
         <div class="row section-map-content">
           <h1>Наш магазин</h1>
@@ -313,6 +396,7 @@
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#catalog">Каталог</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#booking-module">Бронирование</a></li>
                 <li><a href="#section-map">Как нас найти</a></li>
                 <li><a href="#footer">Контакты</a></li>
               </ul>
@@ -351,6 +435,7 @@
     </footer>
 
     <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/auth.js"></script>
 
   </body>
 </html>

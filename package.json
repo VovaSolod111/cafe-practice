@@ -1,0 +1,18 @@
+{
+  "name": "cafe-practice",
+  "version": "1.0.0",
+  "description": "Сайт кофейни Уют с бэкендом на Node.js, Express и MySQL (ПМ.02)",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
