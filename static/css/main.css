@@ -1,0 +1,237 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 50px 0;
+}
+
+a {
+    color: #111;
+}
+
+a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+/* Header */
+/* top-menu li a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #111;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+}
+
+top-menu li a:hover::after {
+    transform: scale(1);
+} */
+/* Header */
+
+/* Carousel */
+.main-carousel {
+    padding: 0;
+}
+
+.main-carousel .carousel-item {
+    display: flex;
+    max-height: 500px;
+}
+
+.main-carousel .carousel-item img {
+    object-fit: cover;
+}
+
+.main-carousel h3 {
+    font-weight: 200px;
+}
+
+.main-carousel .carousel-caption {
+    background-color: #34343433;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Carousel */
+
+
+/* Central-text (catalog) */
+.central-text {
+    text-align: center;
+}
+
+.central-text h1 {
+    font-weight: 100;
+}
+/* Central-text (catalog) */
+
+
+/* Product card */
+.product-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    transition: all .3s;
+    padding: 20px;
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+    border-radius: 10%;
+}
+
+.product-card:hover {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-thumb a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 2px; */
+    /* padding: 20px; */
+}
+
+.product-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10%;
+}
+
+.product-detail {
+    padding: 10px;
+    
+}
+
+.product-detail h4 a {
+    font-weight: 500;
+    display: block;
+}
+
+.product-detail p {
+    height: 45px;
+    overflow: hidden;
+    color: #888;
+    font-size: 15px;
+}
+
+.product-detail h4{
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Product card */
+
+
+/* Reeviews */
+.reviews {
+    background-color: #343434;
+}
+
+.reviews h1 {
+    text-align: center;
+    color: #c8c8c8;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.reviews .carousel-item {
+    padding: 20px;
+}
+
+/* Reeviews */
+
+
+/* Geo */
+.section-map {
+    background-color: #fff;
+}
+
+.section-map-content h1 {
+    font-weight: 200;
+    color: #343434;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-map-content iframe {
+    width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+/* Geo */
+
+
+/* Footer */
+.footer {
+    background-color: #343434;
+}
+
+.footer h4 {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-bottom: 1px solid #666;
+    padding-bottom: 3px;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer a, .footer li {
+    color: #c8c8c8;
+}
+
+.footer li a {
+    display: block;
+}
+
+.footer-icons {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+/* Footer */
+
+
+/* Modal */
+.btn-primary {
+    background-color: #343434;
+    border-color: #343434;
+}
+
+.btn-primary:hover {
+    background-color: #c8c8c8;
+    color: #111;
+    border-color: #343434;
+}
+
+.modal-title {
+    font-weight: 300;
+}
+
+.btn-close {
+    background-color: #c8c8c8;
+}
+/* Modal */
